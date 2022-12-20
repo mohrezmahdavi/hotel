@@ -13,17 +13,28 @@ class HotelController extends Controller
     {
         $popularity = Hotel::where('PlaceID', $request->place_id)->orderBy('Popularity', 'desc')->first();
         $cheapest = Hotel::where('PlaceID', $request->place_id)->where('MinRate', '!=' ,'')->where('MinRate', '!=' ,null)->orderBy('MinRate', 'asc')->first();
+        $this->createHotelSearchLog($request, $cheapest, $popularity);
+        return $this->sendSuccessResponse($cheapest, $popularity);
+    }
+
+    private function createHotelSearchLog(Request $request, $cheapest, $popularity)
+    {
+        HotelLog::create([
+            'user_ip' => $request->ip(),
+            'cheapest_id' => $cheapest?->id,
+            'popularity_id' => $popularity?->id,
+            'place_id' => $request->place_id,
+        ]);
+    }
+
+    private function sendSuccessResponse($cheapest, $popularity)
+    {
         $response = [
             'data' => [
                 'cheapest' => $cheapest,
                 'popularity' => $popularity
             ]
         ];
-        HotelLog::create([
-            'user_ip' => $request->ip(),
-            'cheapest_id' => $cheapest?->id,
-            'popularity_id' => $popularity?->id,
-        ]);
         return response()->json($response);
     }
 }
