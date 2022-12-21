@@ -20,6 +20,6 @@ class Hotel extends Model
 
     public function scopeMostPopular($query)
     {
-        return $query->orderBy('Popularity', 'desc');
+        return $query->orderBy('Popularity', 'asc');
     }
 }

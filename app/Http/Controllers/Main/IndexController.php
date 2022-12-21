@@ -20,7 +20,6 @@ class IndexController extends Controller
         return Cache::rememberForever('cities', function () {
             return Hotel::select('PlaceID','PlaceName')->groupBy('PlaceID')
             ->get()->toArray();
-        });
-        
+        });   
     }
 }
