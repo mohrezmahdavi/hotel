@@ -15,7 +15,7 @@ class HotelSeeder extends Seeder
      */
     public function run()
     {
-        $data = file_get_contents(public_path() . '/hotels.json');
+        $data = file_get_contents(database_path() . '/hotels.json');
         $hotels = json_decode($data, true)["Hotels"]["Hotel"];
         foreach ($hotels as $hotel) {
             Hotel::create([

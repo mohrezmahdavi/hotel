@@ -12,4 +12,14 @@ class Hotel extends Model
     protected $table = 'hotels';
     
     protected $guarded = [];
+
+    public function scopeCheapest($query)
+    {
+        return $query->where('MinRate', '!=' ,'')->where('MinRate', '!=' ,null)->orderBy('MinRate', 'asc');
+    }
+
+    public function scopeMostPopular($query)
+    {
+        return $query->orderBy('Popularity', 'desc');
+    }
 }

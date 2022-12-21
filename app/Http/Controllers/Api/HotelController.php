@@ -11,8 +11,8 @@ class HotelController extends Controller
 {
     public function index(Request $request)
     {
-        $popularity = Hotel::where('PlaceID', $request->place_id)->orderBy('Popularity', 'desc')->first();
-        $cheapest = Hotel::where('PlaceID', $request->place_id)->where('MinRate', '!=' ,'')->where('MinRate', '!=' ,null)->orderBy('MinRate', 'asc')->first();
+        $popularity = Hotel::where('PlaceID', $request->place_id)->mostPopular()->first();
+        $cheapest = Hotel::where('PlaceID', $request->place_id)->cheapest()->first();
         $this->createHotelSearchLog($request, $cheapest, $popularity);
         return $this->sendSuccessResponse($cheapest, $popularity);
     }

@@ -17439,7 +17439,8 @@ __webpack_require__.r(__webpack_exports__);
       value: null,
       citiesFinal: [],
       cheapestHotel: null,
-      popularHotel: null
+      popularHotel: null,
+      selectedCity: null
     };
   },
   setup: function setup() {
@@ -17466,6 +17467,7 @@ __webpack_require__.r(__webpack_exports__);
         console.log(res.data.data);
         _this.cheapestHotel = res.data.data.cheapest;
         _this.popularHotel = res.data.data.popularity;
+        _this.selectedCity = _this.value.PlaceName;
       });
     }
   }
@@ -17529,6 +17531,7 @@ var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "col"
 }, null, -1 /* HOISTED */);
 var _hoisted_14 = {
+  key: 0,
   "class": "row mt-3"
 };
 var _hoisted_15 = {
@@ -17537,9 +17540,9 @@ var _hoisted_15 = {
 var _hoisted_16 = {
   "class": "card"
 };
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_17 = {
   "class": "card-header"
-}, "Results", -1 /* HOISTED */);
+};
 var _hoisted_18 = {
   "class": "card-body"
 };
@@ -17579,7 +17582,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $options.submitButton();
     }),
     "class": "btn btn-primary mb-3"
-  }, " Search ")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_12, " Search "))]), _hoisted_13])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [$data.popularHotel != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", _hoisted_20, " The Most popular hotel in " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.popularHotel.PlaceName) + " is " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.popularHotel.HotelName) + ". Book now for " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.popularHotel.MinRate), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.cheapestHotel != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", _hoisted_21, " The cheapest hotel in " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.cheapestHotel.PlaceName) + " is " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.cheapestHotel.HotelName) + ". Book now for " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.cheapestHotel.MinRate), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])])], 64 /* STABLE_FRAGMENT */);
+  }, " Search ")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_12, " Search "))]), _hoisted_13])])])])]), $data.selectedCity != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, "Results City : " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.selectedCity), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [$data.popularHotel != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", _hoisted_20, " The Most popular hotel in " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.popularHotel.PlaceName) + " is " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.popularHotel.HotelName) + ". Book now for " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.popularHotel.MinRate), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.cheapestHotel != null ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", _hoisted_21, " The cheapest hotel in " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.cheapestHotel.PlaceName) + " is " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.cheapestHotel.HotelName) + ". Book now for " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.cheapestHotel.MinRate), 1 /* TEXT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),

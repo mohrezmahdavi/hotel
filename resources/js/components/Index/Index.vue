@@ -49,10 +49,10 @@
     </div>
   </div>
 
-  <div class="row mt-3">
+  <div class="row mt-3" v-if="(selectedCity != null)">
     <div class="col-md-12">
       <div class="card">
-        <div class="card-header">Results</div>
+        <div class="card-header">Results City : {{ selectedCity }}</div>
         <div class="card-body">
           <div class="list-group">
             <li class="list-group-item list-group-item-action" v-if="(popularHotel != null)">
@@ -82,6 +82,7 @@ export default {
       citiesFinal: [],
       cheapestHotel: null,
       popularHotel: null,
+      selectedCity : null,
     };
   },
   setup: () => ({
@@ -106,6 +107,7 @@ export default {
         console.log(res.data.data);
         this.cheapestHotel = res.data.data.cheapest;
         this.popularHotel = res.data.data.popularity;
+        this.selectedCity = this.value.PlaceName;
       });
     },
   },
